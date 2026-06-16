@@ -12,7 +12,7 @@ USER root
 RUN microdnf install -y shadow-utils && \
     groupadd -g 1001 appuser && \
     useradd -u 1001 -g appuser -m appuser && \
-    microdnf clean all
+    microdnf update -y && microdnf clean all
 
 WORKDIR /app
 
